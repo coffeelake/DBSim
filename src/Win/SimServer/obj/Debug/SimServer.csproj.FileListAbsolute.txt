@@ -1,0 +1,2 @@
+C:\_Develop\DBSim\src\Win\SimServer\SimServer\bin\Debug\SimServer.exe.config
+C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\SimServer.exe.config
