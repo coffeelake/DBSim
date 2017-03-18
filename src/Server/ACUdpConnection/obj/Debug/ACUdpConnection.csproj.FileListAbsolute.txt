@@ -1,5 +1,0 @@
-C:\_Develop\DBSim\src\Server\ACUdpConnection\obj\Debug\ACUdpConnection.csprojResolveAssemblyReference.cache
-C:\_Develop\DBSim\src\Server\ACUdpConnection\bin\Debug\ACUdpConnection.dll
-C:\_Develop\DBSim\src\Server\ACUdpConnection\bin\Debug\ACUdpConnection.pdb
-C:\_Develop\DBSim\src\Server\ACUdpConnection\obj\Debug\ACUdpConnection.dll
-C:\_Develop\DBSim\src\Server\ACUdpConnection\obj\Debug\ACUdpConnection.pdb
