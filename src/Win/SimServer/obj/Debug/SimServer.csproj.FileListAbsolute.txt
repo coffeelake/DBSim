@@ -1,2 +1,12 @@
 C:\_Develop\DBSim\src\Win\SimServer\SimServer\bin\Debug\SimServer.exe.config
 C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\SimServer.exe.config
+C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\SimServer.exe
+C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\SimServer.pdb
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.csprojResolveAssemblyReference.cache
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.Properties.Resources.resources
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.csproj.GenerateResource.Cache
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.exe
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.pdb
+C:\_Develop\DBSim\src\Win\SimServer\obj\Debug\SimServer.Form1.resources
+C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\AssettoCorsaSharedMemory.dll
+C:\_Develop\DBSim\src\Win\SimServer\bin\Debug\AssettoCorsaSharedMemory.pdb

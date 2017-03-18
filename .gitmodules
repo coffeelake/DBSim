@@ -1,0 +1,9 @@
+[submodule "src/AC"]
+	path = src/AC
+	url = https://github.com/Egocentrix/AC-UDP-Connection.git
+[submodule "src/ACSharedMemory"]
+	path = src/ACSharedMemory
+	url = https://github.com/Egocentrix/AC-UDP-Connection.git
+[submodule "src/ACSharedMemoryConnection"]
+	path = src/ACSharedMemoryConnection
+	url = https://github.com/mdjarv/assettocorsasharedmemory.git
