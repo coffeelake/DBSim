@@ -19,7 +19,13 @@ namespace SimServer.Infrastructure.Services
             ac.StaticInfoUpdated += this.AC_StaticInfoUpdated; // Add event listener for StaticInfo
             ac.GraphicsUpdated += this.AC_GraphicInfoUpdated;
             ac.PhysicsUpdated += this.AC_PhysicsUpdated;
+           ac.GameStatusChanged += this.AC_GameStatusChanged;
             ac.Start(); // Connect to shared memory and start interval timers 
+        }
+
+        private void AC_GameStatusChanged(object sender, GameStatusEventArgs e)
+        {
+            this._gameStatus = e.GameStatus;
         }
 
         private Physics _physics;
@@ -27,6 +33,8 @@ namespace SimServer.Infrastructure.Services
         private Graphics _graphics;
 
         private StaticInfo _staticInfo;
+
+        public AC_STATUS _gameStatus;
 
         public Physics GetPhysics()
         {
@@ -80,6 +88,11 @@ namespace SimServer.Infrastructure.Services
             return gear;
         }
 
+        public AC_STATUS GetGameStatus()
+        {
+            return this._gameStatus;
+        }
+
         private void AC_PhysicsUpdated(object sender, PhysicsEventArgs e)
         {
             this._physics = e.Physics;
@@ -96,7 +109,7 @@ namespace SimServer.Infrastructure.Services
 
         private void AC_StaticInfoUpdated(object sender, StaticInfoEventArgs e)
         {
-       this._staticInfo = e.StaticInfo;
+        this._staticInfo = e.StaticInfo;
             // Print out some data from StaticInfo
 
             //  Console.WriteLine("StaticInfo\r\n");

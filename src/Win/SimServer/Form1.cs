@@ -4,20 +4,30 @@
     using System.Threading;
     using System.Windows.Forms;
 
-    using SimServer.Infrastructure.Services;
+    using AssettoCorsaSharedMemory;
 
+    using SimServer.Infrastructure.Services;
+    using System.IO;
+    using System.IO.Ports;
     public partial class Form1 : Form
     {
         private readonly IAcServerService _acServerService;
 
         private BackgroundWorker _acServerWorker;
 
+        private SerialPort sp;
+
         public Form1()
         {
             this.InitializeComponent();
             this._acServerService = new AcServerService();
+           // this._acServerService = new AcServerServiceFake();
             this.InitacServerJob();
-
+           
+                sp = new SerialPort();
+                sp.BaudRate = 250000;
+                sp.PortName = "COM3";
+                sp.Open();
         }
 
         private void InitacServerJob()
@@ -49,10 +59,12 @@
                                          CurrentLaptime = this._acServerService.GetGraphics().CurrentTime,
                                          BestLapTime = this._acServerService.GetGraphics().BestTime
                                      };
-
+                    if (this._acServerService.GetGameStatus() == AC_STATUS.AC_LIVE)
+                    {
                         this._acServerWorker.ReportProgress(0, result);
+                    }
 
-                    Thread.Sleep(1);
+                    Thread.Sleep(10);
                 }
 
             }
@@ -80,6 +92,16 @@
             this.lblCurenTime.Text = result.CurrentLaptime;
 
             this.lblBestTime.Text = result.BestLapTime;
+
+            var curr = "";
+            if (!string.IsNullOrEmpty(result.CurrentLaptime))
+            {
+                curr = result.CurrentLaptime;
+            }
+          
+                string test = new SerialHelper().GetSerialString(result.GearName, curr); 
+                sp.WriteLine(test);
+       
         }
     }
 
@@ -90,6 +112,18 @@
         public string CurrentLaptime { get; set; }
 
         public string BestLapTime { get; set; }
+    }
+
+    public class SerialHelper
+    {
+        private string startToken = "<";
+        private string endToken = ">";
+
+        public string GetSerialString(string gear, string currentLap)
+        {
+            currentLap = currentLap.PadLeft(12, '-');
+            return this.startToken + gear + currentLap + this.endToken;
+        }
     }
 
 }

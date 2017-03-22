@@ -22,5 +22,7 @@ namespace SimServer.Infrastructure.Services
          StaticInfo GetStaticInfo();
 
         string MapGear(int gear);
+
+        AC_STATUS GetGameStatus();
     }
 }
